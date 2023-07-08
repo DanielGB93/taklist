@@ -2,7 +2,7 @@ export const Nota = (props) =>{
     const {note}=props;
     return (
         <>
-        <li>{note}</li>
+        <p> <input type="checkbox" id="coding" name="interest" value="coding" />{note}</p>
         </>
     );
 };
