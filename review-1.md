@@ -1,0 +1,2 @@
+La aplicación desarrollada consiste en un administrador de tareas donde puedes llevar un control de las tareas que haz realizado en tu día a día. 
+Esto te permitirá llevar un control ordenado de tu rutina sin que pierdas el control de lo que estás por hacer. 
