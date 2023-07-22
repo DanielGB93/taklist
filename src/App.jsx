@@ -1,24 +1,23 @@
-import {useState } from "react";
-import Header from "./Componentes/Header";
-import ListaNotas from "./Componentes/ListaNotas";
-
+import React from "react";
+import { useTaskReducer } from "./Componentes/useTaskReducer";
+import TaskForm from "./Componentes/TaskForm";
+import TaskList from "./Componentes/TaskList";
+export const TaskContext = React.createContext();
 
 function App() {
-const [Lista, setLista]=useState([]);
-const [newNote, setNewNote] = useState('');
+const {tasks, addTask, deleteTask, updateTask} = useTaskReducer();
 
-
-  function agregarNota() {
-    setLista([...Lista, newNote]);
-  }
-  return (
-    <div className = "App">
-      <Header />
-      <input type="text" value={newNote} onChange={e => setNewNote(e.target.value)}/>
-      <button onClick={agregarNota} >Agregar</button>
-      <ListaNotas list= {Lista}/>
+  
+return (
+  <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateTask }}>
+    <div className="app">
+      <h1>Lista de Tareas</h1>
+      <TaskForm />
+      <TaskList />
     </div>
-  );
-}
+  </TaskContext.Provider>
+);
+};
+
 
 export default App
